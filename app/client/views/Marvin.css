@@ -1,0 +1,7 @@
+.root {
+  bottom: 0;
+  fill: white;
+  left: 50%;
+  position: absolute;
+  transform: translate(-50%, 0);
+}

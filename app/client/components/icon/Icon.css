@@ -1,0 +1,31 @@
+.root {
+  display: block;
+  font-size: inherit;
+  height: 1em;
+  width: 1em;
+}
+
+.spin {
+  animation: icon-spin 2s infinite linear;
+}
+
+.rotate90 {
+  transform: rotate(90deg);
+}
+
+.rotate180 {
+  transform: rotate(180deg);
+}
+
+.rotate270 {
+  transform: rotate(270deg);
+}
+
+@keyframes icon-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(359deg);
+  }
+}

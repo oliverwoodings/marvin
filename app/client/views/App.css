@@ -1,0 +1,12 @@
+@import 'normalize.css';
+
+.root {
+  background: black;
+  color: white;
+  font-family: 'Roboto', sans-serif;
+  font-size: 6vw;
+  font-weight: 300;
+  height: 177.77vw;
+  position: relative;
+  width: 100%
+}
