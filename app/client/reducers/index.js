@@ -1,4 +1,6 @@
 import { combineReducers } from 'redux'
-import foo from './fooReducer'
+import weather from './weatherReducer'
+import forecast from './forecastReducer'
+import init from './initReducer'
 
-export default combineReducers({ foo })
+export default combineReducers({ weather, forecast, init })

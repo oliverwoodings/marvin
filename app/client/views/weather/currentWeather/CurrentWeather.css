@@ -1,0 +1,16 @@
+@import 'variables';
+
+.root {
+  align-items: center;
+  display: flex;
+  font-size: var(--font-size--large);
+}
+
+.icon {
+  font-size: 12vw;
+  margin-right: 3vw;
+}
+
+.temp {
+  
+}

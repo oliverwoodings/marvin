@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Icon from '../components/icon/Icon'
+import Icon from '../../components/icon/Icon'
 import styles from './Marvin.css'
 
 export default class Marvin extends Component {

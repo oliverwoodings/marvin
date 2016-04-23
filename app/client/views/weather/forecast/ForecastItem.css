@@ -1,0 +1,14 @@
+.root {
+  display: flex;
+  font-size: 4vw;
+  justify-content: center;
+}
+
+.time {
+  margin-right: 2vw;
+}
+
+.icon {
+  margin-right: 2vw;
+
+}

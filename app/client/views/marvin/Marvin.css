@@ -1,7 +1,10 @@
+@import 'variables';
+
 .root {
   bottom: 0;
-  fill: white;
+  font-size: 20vw;
   left: 50%;
+  margin-bottom: var(--dimension-spacing);
   position: absolute;
   transform: translate(-50%, 0);
 }

@@ -1,5 +1,5 @@
 import createCherrytree from 'cherrytree'
-import App from './views/app'
+import App from './views/App'
 
 export default function createRouter () {
   return createCherrytree().map(routes)

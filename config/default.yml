@@ -1,1 +1,6 @@
 port: 4321
+
+apis:
+  weather:
+    key: apikey
+    cityId: 2643743

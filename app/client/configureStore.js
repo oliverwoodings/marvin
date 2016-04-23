@@ -1,6 +1,28 @@
-import { createStore } from 'redux';
-import rootReducer from './reducers';
+import { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import createLogger from 'redux-logger'
+import rootReducer from './reducers'
+import createSocketInterface from './lib/createSocketInterface'
+import { SEND_INIT } from './constants'
 
-export default function configureStore () {
-  return createStore(rootReducer);
+export default function configureStore (socket) {
+  const middleware = applyMiddleware(
+    thunk,
+    createSocketInterface(socket),
+    createLogger()
+  )
+
+  const store = createStore(rootReducer, middleware)
+  socket.on('*', ({ data }) => {
+    store.dispatch({
+      type: `RECEIVE_${data[0]}`,
+      payload: data[1]
+    })
+  })
+
+  socket.on('connect', () => {
+    store.dispatch({ type: SEND_INIT })
+  })
+
+  return store
 }

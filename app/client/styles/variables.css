@@ -1,0 +1,7 @@
+:root {
+  --dimension-spacing: 3vw;
+
+  --font-size: 6vw;
+  --font-size--large: 15vw;
+  --font-size--small: 3vw;
+}

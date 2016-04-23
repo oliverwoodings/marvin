@@ -18,7 +18,6 @@ const config = {
   },
   resolve: {
     alias: {
-      'react/lib/Object.assign': resolve(__dirname, 'node_modules', 'lodash.assign'),
       'react': resolve(__dirname, 'node_modules', 'react')
     },
     fallback: resolve(__dirname, 'node_modules')
@@ -26,7 +25,8 @@ const config = {
   plugins: [
     new webpack.DefinePlugin({
       'process.env.NODE_ENV': '"' + env + '"'
-    })
+    }),
+    new webpack.IgnorePlugin(/^\.\/locale$/, /moment$/)
   ],
   resolveLoader: {
     'fallback': resolve(__dirname, 'node_modules')
