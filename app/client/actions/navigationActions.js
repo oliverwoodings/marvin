@@ -1,6 +1,6 @@
 import { RELOAD } from '../constants'
 
-export default function reload () {
+export function reload () {
   return (dispatch) => {
     dispatch({ type: RELOAD })
     window.reload()
