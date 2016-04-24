@@ -15,3 +15,6 @@ apis:
     routes:
       - { from: wim, to: nem }
       - { from: nem, to: wim }
+
+auth:
+  key: foo

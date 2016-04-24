@@ -19,7 +19,13 @@ const UPDATE_INTERVAL = 30 * 1000
 io.use(ioWildcard())
 io.use(socketLogger)
 io.on('connection', (socket) => {
-  addSocketHandlers(socket)
+  if (socket.handshake.query.key === config.auth.key) {
+    socket.emit('AUTHORISED')
+    addSocketHandlers(socket)
+  } else {
+    socket.emit('UNAUTHORISED')
+    socket.disconnect()
+  }
 })
 
 setInterval(async () => {

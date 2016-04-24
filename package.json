@@ -26,6 +26,7 @@
     "socket.io": "^1.4.5",
     "socket.io-client": "^1.4.5",
     "socketio-wildcard": "^0.3.0",
+    "urlite": "^1.2.5",
     "webpack": "^1.13.0",
     "winston": "^2.2.0"
   },

@@ -1,11 +1,13 @@
 import React from 'react'
 import { render } from 'react-dom'
 import { AppContainer } from 'react-hot-loader'
+import urlite from 'urlite/querystring/urlite'
 import io from 'socket.io-client'
 import ioWildcard from 'socketio-wildcard'
 import configureStore from './configureStore'
 
-const socket = io('/')
+const { query } = urlite.parse(window.location.search)
+const socket = io(`/?key=${query.key}`)
 ioWildcard(io.Manager)(socket)
 
 const container = document.getElementById('container')

@@ -4,7 +4,6 @@
 .root {
   background: black;
   color: white;
-  display: flex;
   fill: white;
   font-family: 'Roboto', sans-serif;
   font-size: var(--font-size);
@@ -14,7 +13,7 @@
   width: 100%;
 }
 
-.loading {
+.loading, .unauthorised {
   font-size: 30vw;
   left: 50%;
   position: absolute;
