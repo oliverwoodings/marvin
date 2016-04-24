@@ -1,8 +1,10 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import Loading from '../components/loading/Loading'
 import Marvin from './marvin/Marvin'
 import Weather from './weather/Weather'
 import Clock from './clock/Clock'
+import Transport from './transport/Transport'
 import styles from './App.css'
 
 function mapStateToProps ({ init }) {
@@ -14,13 +16,18 @@ function mapStateToProps ({ init }) {
 class App extends Component {
   render () {
     if (!this.props.initialised) {
-      return null
+      return (
+        <div className={styles.root}>
+          <Loading className={styles.loading} />
+        </div>
+      )
     }
 
     return (
       <div className={styles.root}>
         <Clock />
         <Weather />
+        <Transport />
         <Marvin />
       </div>
     )

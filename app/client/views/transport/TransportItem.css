@@ -1,0 +1,32 @@
+@import 'variables';
+
+.root {
+  align-items: center;
+  display: flex;
+}
+
+.root + .root {
+  margin-top: var(--dimension-spacing);
+}
+
+.type {
+  font-size: 7vw;
+  margin-right: var(--dimension-spacing);
+}
+
+.disrupted {
+  animation: pulse 1s linear infinite;
+  margin-left: -1vw;
+}
+
+@keyframes pulse {
+ 0% {
+    fill: rgba(255, 255, 255, 0.5);
+ }
+ 50% {
+    fill: rgba(255, 255, 255, 1);
+ }
+ 100% {
+    fill: rgba(255, 255, 255, 0.5);
+ }
+}

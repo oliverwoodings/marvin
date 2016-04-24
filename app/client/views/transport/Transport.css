@@ -1,0 +1,7 @@
+@import 'variables';
+
+.root {
+  bottom: var(--dimension-spacing);
+  left: var(--dimension-spacing);
+  position: absolute;
+}

@@ -4,3 +4,14 @@ apis:
   weather:
     key: apikey
     cityId: 2643743
+  tfl:
+    buses:
+      - 93
+      - 57
+      - 131
+      - 219
+  huxley:
+    key: apikey
+    routes:
+      - { from: wim, to: nem }
+      - { to: nem, from: wim }

@@ -4,6 +4,7 @@
 .root {
   background: black;
   color: white;
+  display: flex;
   fill: white;
   font-family: 'Roboto', sans-serif;
   font-size: var(--font-size);
@@ -11,4 +12,12 @@
   height: 177.77vw;
   position: relative;
   width: 100%;
+}
+
+.loading {
+  font-size: 30vw;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  margin: -15vw 0 0 -15vw;
 }
