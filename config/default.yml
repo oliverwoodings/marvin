@@ -14,4 +14,4 @@ apis:
     key: apikey
     routes:
       - { from: wim, to: nem }
-      - { to: nem, from: wim }
+      - { from: nem, to: wim }

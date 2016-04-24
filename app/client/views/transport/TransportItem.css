@@ -16,7 +16,6 @@
 
 .disrupted {
   animation: pulse 1s linear infinite;
-  margin-left: -1vw;
 }
 
 @keyframes pulse {
