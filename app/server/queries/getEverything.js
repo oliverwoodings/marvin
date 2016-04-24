@@ -1,9 +1,10 @@
 import log from '../log'
-import getWeather from '../queries/getWeather'
-import getForecast from '../queries/getForecast'
-import getTubeStatus from '../queries/getTubeStatus'
-import getTrainStatus from '../queries/getTrainStatus'
-import getBusStatus from '../queries/getBusStatus'
+import getWeather from './getWeather'
+import getForecast from './getForecast'
+import getTubeStatus from './getTubeStatus'
+import getTrainStatus from './getTrainStatus'
+import getBusStatus from './getBusStatus'
+import getGitHash from './getGitHash'
 
 export default async function getEverything () {
   try {
@@ -14,6 +15,7 @@ export default async function getEverything () {
       getTubeStatus(),
       getBusStatus()
     ])
+    const gitHash = getGitHash()
 
     return {
       weather,
@@ -22,10 +24,11 @@ export default async function getEverything () {
         train,
         tube,
         bus
-      }
+      },
+      gitHash
     }
   } catch (e) {
-    log.error('Unable to retrieve forecast')
+    log.error('Unable to retrieve everything')
     throw e
   }
 }

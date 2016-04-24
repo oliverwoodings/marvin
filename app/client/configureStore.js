@@ -4,6 +4,7 @@ import createLogger from 'redux-logger'
 import rootReducer from './reducers'
 import createSocketInterface from './lib/createSocketInterface'
 import { SEND_INIT } from './constants'
+import { receiveMessage } from './actions/socketActions'
 
 export default function configureStore (socket) {
   const middleware = applyMiddleware(
@@ -13,11 +14,8 @@ export default function configureStore (socket) {
   )
 
   const store = createStore(rootReducer, middleware)
-  socket.on('*', ({ data }) => {
-    store.dispatch({
-      type: `RECEIVE_${data[0]}`,
-      payload: data[1]
-    })
+  socket.on('*', (payload) => {
+    store.dispatch(receiveMessage(payload))
   })
 
   socket.on('connect', () => {
