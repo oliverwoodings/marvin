@@ -12,8 +12,8 @@
       "host": "marvin.owoodings.net",
       "ref": "origin/master",
       "repo": "git@github.com:oliverwoodings/marvin.git",
-      "path": "/home/oli/apps/marvin/production",
-      "post-deploy" : "npm install && pm2 startOrRestart ecosystem.json --env production"
+      "path": "/home/oli/apps/marvin",
+      "post-deploy" : "npm install && make build && pm2 startOrRestart ecosystem.json --env production"
     }
   }
 }
