@@ -9,8 +9,13 @@ import getAuthKey from './lib/getAuthKey'
 const socket = io(`/?key=${getAuthKey()}`)
 ioWildcard(io.Manager)(socket)
 
+
+const recognition = new webkitSpeechRecognition()
+recognition.continuous = true
+recognition.interimResults = true
+
 const container = document.getElementById('container')
-const store = configureStore(socket)
+const store = configureStore(socket, recognition)
 
 renderRoot()
 

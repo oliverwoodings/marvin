@@ -14,12 +14,12 @@ const app = express()
 const server = createServer(app);
 const io = createSocketIO(server)
 
-const UPDATE_INTERVAL = 30 * 1000
-
 io.use(ioWildcard())
 io.use(socketLogger)
 io.on('connection', (socket) => {
-  if (socket.handshake.query.key === config.auth.key) {
+  const { query, address } = socket.handshake
+
+  if (query.key === config.auth.key || config.localhost.indexOf(address) >= 0) {
     socket.emit('AUTHORISED')
     addSocketHandlers(socket)
   } else {
@@ -30,7 +30,7 @@ io.on('connection', (socket) => {
 
 setInterval(async () => {
   io.emit('INIT', await getEverything())
-}, UPDATE_INTERVAL)
+}, config.updateInterval)
 
 const dist = join(__dirname, '..', '..', 'dist')
 const env = process.env.NODE_ENV || 'development'

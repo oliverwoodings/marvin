@@ -17,3 +17,7 @@ export function getTrainDisruptionUrl (apiKey, from, to) {
 export function getBusDisruptionUrl (bus) {
   return `https://api.tfl.gov.uk/Line/${bus}/Disruption`
 }
+
+export function getWitUrl (question) {
+  return `https://api.wit.ai/message?q=${encodeURIComponent(question)}`
+}

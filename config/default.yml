@@ -1,4 +1,13 @@
 port: 4321
+updateInterval: 30000
+
+localhost:
+  - '127.0.0.1'
+  - '0:0:0:0:0:0:0:1'
+  - '::1'
+
+auth:
+  key: foo
 
 apis:
   weather:
@@ -15,6 +24,5 @@ apis:
     routes:
       - { from: wim, to: nem }
       - { from: nem, to: wim }
-
-auth:
-  key: foo
+  wit:
+    key: apikey

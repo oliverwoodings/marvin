@@ -6,6 +6,7 @@ import Marvin from './marvin/Marvin'
 import Weather from './weather/Weather'
 import Clock from './clock/Clock'
 import Transport from './transport/Transport'
+import Question from './question/Question'
 import styles from './App.css'
 
 function mapStateToProps ({ init }) {
@@ -39,6 +40,7 @@ class App extends Component {
         <Weather />
         <Transport />
         <Marvin />
+        <Question />
       </div>
     )
   }

@@ -1,5 +1,9 @@
-import { RECEIVE_INIT } from '../constants'
+import {
+  RECEIVE_INIT,
+  RECEIVE_QUESTION_RESPONSE
+} from '../constants'
 import { reload } from './navigationActions'
+import { processQuestionResponse } from './questionActions'
 
 export function receiveMessage ({ data }) {
   return (dispatch, getState) => {
@@ -13,6 +17,10 @@ export function receiveMessage ({ data }) {
       if (oldHash !== newHash && oldHash !== null) {
         dispatch(reload())
       }
+    }
+
+    if (type === RECEIVE_QUESTION_RESPONSE) {
+      dispatch(processQuestionResponse(payload))
     }
 
     dispatch({ type, payload })
