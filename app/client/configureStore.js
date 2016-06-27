@@ -9,6 +9,7 @@ import {
   speechResult,
   recognitionStarted,
   recognitionEnded,
+  recognitionError,
   receiveRecognition
 } from './actions/speechActions'
 
@@ -41,6 +42,10 @@ export default function configureStore (socket, recognition) {
 
   recognition.addEventListener('end', () => {
     store.dispatch(recognitionEnded())
+  })
+
+  recognition.addEventListener('error', ({ error, message }) => {
+    store.dispatch(recognitionError(error, message))
   })
 
   return store

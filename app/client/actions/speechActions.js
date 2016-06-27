@@ -7,7 +7,8 @@ import {
   STOP_SPEAKING,
   RECEIVE_SPEECH_RECOGNITION,
   RECOGNITION_ENDED,
-  RECOGNITION_STARTED
+  RECOGNITION_STARTED,
+  RECOGNITION_ERROR
 } from '../constants'
 import { sendQuestion } from './questionActions'
 import speak from '../lib/speak'
@@ -105,6 +106,13 @@ export function receiveRecognition (recognition) {
 
 export function recognitionStarted () {
   return { type: RECOGNITION_STARTED }
+}
+
+export function recognitionError (error, message) {
+  return {
+    type: RECOGNITION_ERROR,
+    payload: { error, message }
+  }
 }
 
 export function recognitionEnded () {
