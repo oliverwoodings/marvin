@@ -8,6 +8,7 @@ import hotLoad from './lib/hotLoad'
 import log from './log'
 import socketLogger from './lib/socketLogger'
 import addSocketHandlers from './handlers'
+import ttsHandler from './handlers/ttsHandler'
 import getEverything from './queries/getEverything'
 
 const app = express()
@@ -40,6 +41,8 @@ if (env === 'development') {
 }
 
 app.use('/', express.static(dist))
+
+app.get('/api/tts', ttsHandler)
 
 server.listen(config.port, () => {
   log.info(`Marvin started (http://localhost:${config.port})`)
