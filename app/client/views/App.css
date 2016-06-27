@@ -13,6 +13,10 @@
   width: 100%;
 }
 
+.fullscreen {
+  cursor: none;
+}
+
 .loading, .unauthorised {
   font-size: 30vw;
   left: 50%;

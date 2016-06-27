@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
+import classnames from 'classnames'
 import Loading from '../components/loading/Loading'
 import Icon from '../components/icon/Icon'
 import Marvin from './marvin/Marvin'
@@ -18,9 +19,15 @@ function mapStateToProps ({ init }) {
 
 class App extends Component {
   render () {
+    const isFullscreen = document.fullscreenEnabled || document.webkitFullscreenEnabled
+
+    const classes = classnames(styles.root, {
+      [styles.fullscreen]: isFullscreen
+    })
+
     if (!this.props.authorised) {
       return (
-        <div className={styles.root}>
+        <div className={classes}>
           <Icon name='denied' className={styles.unauthorised} />
         </div>
       )
@@ -28,14 +35,14 @@ class App extends Component {
 
     if (!this.props.initialised) {
       return (
-        <div className={styles.root}>
+        <div className={classes}>
           <Loading className={styles.loading} />
         </div>
       )
     }
 
     return (
-      <div className={styles.root}>
+      <div className={classes}>
         <Clock />
         <Weather />
         <Transport />
