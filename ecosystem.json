@@ -9,7 +9,7 @@
   "deploy": {
     "production": {
       "user": "root",
-      "host": "owoodings.net",
+      "host": "marvin.owoodings.net",
       "ref": "origin/master",
       "repo": "git@github.com:oliverwoodings/marvin.git",
       "path": "~/apps/marvin",
