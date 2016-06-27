@@ -1,7 +1,8 @@
 import { spawnSync } from 'child_process'
 
-export default function getGitHash () {
-  const { stdout } = spawnSync('git', ['rev-parse', 'HEAD'])
+const { stdout } = spawnSync('git', ['rev-parse', 'HEAD'])
+const hash = stdout.toString('utf8').replace(/^\s+|\s+$/g, '')
 
-  return stdout.toString('utf8').replace(/^\s+|\s+$/g, '')
+export default function getGitHash () {
+  return hash
 }
