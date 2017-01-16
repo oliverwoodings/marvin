@@ -3,11 +3,9 @@ import { connect } from 'react-redux'
 import classnames from 'classnames'
 import Loading from '../components/loading/Loading'
 import Icon from '../components/icon/Icon'
-import Marvin from './marvin/Marvin'
 import Weather from './weather/Weather'
 import Clock from './clock/Clock'
 import Transport from './transport/Transport'
-import Question from './question/Question'
 import styles from './App.css'
 
 function mapStateToProps ({ init }) {
@@ -46,8 +44,6 @@ class App extends Component {
         <Clock />
         <Weather />
         <Transport />
-        <Marvin />
-        <Question />
       </div>
     )
   }

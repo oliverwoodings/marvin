@@ -5,3 +5,5 @@ log/*
 tmp
 dist/javascript
 config/local*
+skills.zip
+app/skills/node_modules

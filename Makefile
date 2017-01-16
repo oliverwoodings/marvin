@@ -18,3 +18,6 @@ deploy:
 
 bootstrap:
 	@npm install
+
+bundle-skills:
+	(cd ./app/skills && zip -r ../../skills.zip ./*)

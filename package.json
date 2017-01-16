@@ -7,6 +7,7 @@
     "axios": "^0.10.0",
     "babel-polyfill": "^6.7.4",
     "babel-register": "^6.7.2",
+    "body-parser": "^1.15.2",
     "cherrytree": "^2.3.1",
     "cherrytree-for-react": "^1.1.6",
     "classnames": "^2.2.3",
