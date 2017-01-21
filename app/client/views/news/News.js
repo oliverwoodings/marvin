@@ -6,7 +6,7 @@ export default class News extends Component {
     return (
       <iframe
         className={styles.root}
-        src='https://www.youtube.com/embed/y60wDzZt8yg?rel=0&controls=&showinfo=0&autoplay=1'
+        src='https://www.youtube.com/embed/y60wDzZt8yg?rel=0&controls=&showinfo=0&autoplay=1&vq=small'
         frameBorder='0'
       />
     )
