@@ -10,6 +10,16 @@ module.exports = {
       200: 'OK, I\'ve asked marvin to show you the status of the ' + line,
       404: 'Marvin doesn\'t know what line that is'
     })
+  },
+  PlayTheNews: function () {
+    request(this, 'play/news', {}, {
+      200: 'OK, I\'ve asked marvin put the news on for you'
+    })
+  },
+  StopTheNews: function () {
+    request(this, 'stop/news', {}, {
+      200: 'OK, I\'ve asked marvin to turn the news off'
+    })
   }
 }
 

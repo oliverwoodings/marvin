@@ -22,7 +22,9 @@ apis:
   huxley:
     key: apikey
     routes:
-      - { from: wim, to: nem }
-      - { from: nem, to: wim }
+      - { from: wim, to: wat }
+      - { from: wat, to: wim }
+      - { from: wim, to: kng }
+      - { from: kng, to: wim }
   wit:
     key: apikey

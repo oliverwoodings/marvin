@@ -1,6 +1,6 @@
 import React, { Component, PropTypes } from 'react'
 import invariant from 'invariant'
-import Icon from '../../components/icon/Icon'
+import Icon from '../../../components/icon/Icon'
 
 const ICON_MAP = {
   'sun': ['01d'],

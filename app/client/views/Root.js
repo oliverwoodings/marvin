@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Provider } from 'react-redux'
+import { Router } from 'cherrytree-for-react'
 import App from './App'
 
 export default class Root extends Component {
@@ -7,7 +8,7 @@ export default class Root extends Component {
     const { store, router } = this.props
     return (
       <Provider store={store}>
-        <App />
+        <Router router={router} />
       </Provider>
     )
   }
