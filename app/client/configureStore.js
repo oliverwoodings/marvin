@@ -1,51 +1,34 @@
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware, compose } from 'redux'
 import thunk from 'redux-thunk'
 import createLogger from 'redux-logger'
 import rootReducer from './reducers'
 import createSocketInterface from './lib/createSocketInterface'
 import { SEND_INIT } from './constants'
 import { receiveMessage } from './actions/socketActions'
-import {
-  speechResult,
-  recognitionStarted,
-  recognitionEnded,
-  recognitionError,
-  receiveRecognition
-} from './actions/speechActions'
 
-export default function configureStore (socket, recognition) {
-  const middleware = applyMiddleware(
+export default function configureStore (socket, router) {
+  const middleware = [
     thunk,
     createSocketInterface(socket),
     createLogger()
+  ]
+
+  function getDevToolsExtension () {
+    if (window.devToolsExtension) {
+      return window.devToolsExtension()
+    } else {
+      return (f) => f
+    }
+  }
+
+  const store = createStore(
+    rootReducer,
+    undefined,
+    compose(applyMiddleware(...middleware), getDevToolsExtension())
   )
 
-  const store = createStore(rootReducer, middleware)
-
   socket.on('*', (payload) => {
-    store.dispatch(receiveMessage(payload))
-  })
-
-  socket.on('connect', () => {
-    store.dispatch({ type: SEND_INIT })
-  })
-
-  store.dispatch(receiveRecognition(recognition))
-
-  recognition.addEventListener('result', (result) => {
-    store.dispatch(speechResult(result))
-  })
-
-  recognition.addEventListener('start', () => {
-    store.dispatch(recognitionStarted())
-  })
-
-  recognition.addEventListener('end', () => {
-    store.dispatch(recognitionEnded())
-  })
-
-  recognition.addEventListener('error', ({ error, message }) => {
-    store.dispatch(recognitionError(error, message))
+    store.dispatch(receiveMessage(payload, router))
   })
 
   return store

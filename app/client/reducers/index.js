@@ -3,7 +3,5 @@ import weather from './weatherReducer'
 import forecast from './forecastReducer'
 import init from './initReducer'
 import transport from './transportReducer'
-import marvin from './marvinReducer'
-import speech from './speechReducer'
 
-export default combineReducers({ weather, forecast, init, transport, marvin, speech })
+export default combineReducers({ weather, forecast, init, transport })

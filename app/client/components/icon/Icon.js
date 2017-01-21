@@ -23,8 +23,8 @@ export default class Icon extends Component {
       spin,
       name,
       rotate,
-      ...props,
-      className
+      className,
+      ...props
     } = this.props
 
     const classes = classnames(styles.root, className, {

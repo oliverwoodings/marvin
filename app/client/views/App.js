@@ -3,11 +3,9 @@ import { connect } from 'react-redux'
 import classnames from 'classnames'
 import Loading from '../components/loading/Loading'
 import Icon from '../components/icon/Icon'
-import Marvin from './marvin/Marvin'
-import Weather from './weather/Weather'
-import Clock from './clock/Clock'
-import Transport from './transport/Transport'
-import Question from './question/Question'
+import Weather from './widgets/weather/Weather'
+import Clock from './widgets/clock/Clock'
+import Transport from './widgets/transport/Transport'
 import styles from './App.css'
 
 function mapStateToProps ({ init }) {
@@ -19,13 +17,14 @@ function mapStateToProps ({ init }) {
 
 class App extends Component {
   render () {
+    const { authorised, initialised, children } = this.props
     const isFullscreen = document.fullscreenEnabled || document.webkitFullscreenEnabled
 
     const classes = classnames(styles.root, {
       [styles.fullscreen]: isFullscreen
     })
 
-    if (!this.props.authorised) {
+    if (!authorised) {
       return (
         <div className={classes}>
           <Icon name='denied' className={styles.unauthorised} />
@@ -33,7 +32,7 @@ class App extends Component {
       )
     }
 
-    if (!this.props.initialised) {
+    if (!initialised) {
       return (
         <div className={classes}>
           <Loading className={styles.loading} />
@@ -46,8 +45,7 @@ class App extends Component {
         <Clock />
         <Weather />
         <Transport />
-        <Marvin />
-        <Question />
+        {children || <Icon name='marvinHead' className={styles.marvin} />}
       </div>
     )
   }

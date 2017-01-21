@@ -1,5 +1,5 @@
 import React from 'react'
-import Icon from '../../components/icon/Icon'
+import Icon from '../../../components/icon/Icon'
 import styles from './TransportItem.css'
 
 export default function TransportItem ({ disrupted, type }) {
