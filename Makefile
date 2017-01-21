@@ -14,7 +14,7 @@ build:
 	@NODE_ENV=production $(BIN)/webpack -p --progress
 
 deploy:
-	@pm2 deploy production
+	@$(BIN)/pm2 deploy production
 
 bootstrap:
 	@npm install
