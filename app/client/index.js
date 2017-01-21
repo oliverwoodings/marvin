@@ -8,6 +8,8 @@ import configureStore from './configureStore'
 import getAuthKey from './lib/getAuthKey'
 import { receiveRouter } from './actions/navigationActions'
 
+const env = process.env.NODE_ENV || 'development'
+
 const socket = io(`/?key=${getAuthKey()}`)
 ioWildcard(io.Manager)(socket)
 
@@ -26,7 +28,7 @@ if (module.hot) {
 function renderRoot () {
   const Root = require('./views/Root').default
 
-  if (process.env.NODE_ENV === 'development') {
+  if (env === 'development') {
     render(
       <AppContainer>
         <Root store={store} router={router} />
@@ -34,6 +36,6 @@ function renderRoot () {
       container
     )
   } else {
-    render(<Root store={store} router={router} />)
+    render(<Root store={store} router={router} />, container)
   }
 }
