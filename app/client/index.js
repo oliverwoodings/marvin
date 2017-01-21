@@ -25,10 +25,15 @@ if (module.hot) {
 
 function renderRoot () {
   const Root = require('./views/Root').default
-  render(
-    <AppContainer>
-      <Root store={store} router={router} />
-    </AppContainer>,
-    container
-  )
+
+  if (process.env.NODE_ENV === 'development') {
+    render(
+      <AppContainer>
+        <Root store={store} router={router} />
+      </AppContainer>,
+      container
+    )
+  } else {
+    render(<Root store={store} router={router} />)
+  }
 }
