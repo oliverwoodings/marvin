@@ -13,7 +13,7 @@ module.exports = function playNews (io) {
 
 function normaliseMediaType (mediaType) {
   if (mediaType.includes('news')) return 'news'
-  if (/radio (four|4)/) return 'radio-4'
-  if (/radio (one|1)/) return 'radio-1'
-  if (/radio (two|2)/) return 'radio-2'
+  if (/radio (one|1)/.test(mediaType)) return 'radio-1'
+  if (/radio (two|2)/.test(mediaType)) return 'radio-2'
+  if (/radio (four|4)/.test(mediaType)) return 'radio-4'
 }
