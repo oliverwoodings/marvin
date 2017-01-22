@@ -25,6 +25,7 @@ export function receiveMessage ({ data }) {
         setTimeout(() => dispatch(transitionTo('/')), 20000)
         break
       case RECEIVE_PLAY_MEDIA:
+        dispatch(transitionTo('/'))
         if (payload.mediaType === 'news') {
           dispatch(transitionTo('news'))
         } else if (payload.mediaType.includes('radio')) {

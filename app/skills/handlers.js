@@ -24,8 +24,9 @@ module.exports = {
   },
   Stop: function () {
     var mediaType = this.event.request.intent.slots.MediaType.value
+    var action = mediaType ? 'turn ' + mediaType + ' off' : 'stop what he\'s doing'
     request(this, 'stop', {
-      200: 'OK, I\'ve asked marvin to turn ' + mediaType + ' off'
+      200: 'OK, I\'ve asked marvin to ' + action
     })
   }
 }
