@@ -26,11 +26,14 @@ export function receiveMessage ({ data }) {
         break
       case RECEIVE_PLAY_MEDIA:
         dispatch(transitionTo('/'))
-        if (payload.mediaType === 'news') {
-          dispatch(transitionTo('news'))
-        } else if (payload.mediaType.includes('radio')) {
-          dispatch(transitionTo('radio', { station: payload.mediaType }))
-        }
+        // Defer so we have a chance to kill the current audio stream
+        setTimeout(() => {
+          if (payload.mediaType === 'news') {
+            dispatch(transitionTo('news'))
+          } else if (payload.mediaType.includes('radio')) {
+            dispatch(transitionTo('radio', { station: payload.mediaType }))
+          }
+        }, 100)
         break
       case RECEIVE_STOP_MEDIA:
         dispatch(transitionTo('/'))
