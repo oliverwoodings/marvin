@@ -1,9 +1,7 @@
 @import 'variables';
 
 .root {
-  right: var(--dimension-spacing);
-  position: absolute;
-  top: var(--dimension-spacing);
+  margin-left: auto;
 }
 
 .current {

@@ -1,13 +1,21 @@
 @import 'normalize.css';
 @import 'variables';
 
+* {
+  box-sizing: border-box;
+}
+
 .root {
+  align-items: center;
   background: black;
   color: white;
+  display: flex;
   fill: white;
+  flex-direction: column;
   font-family: 'Roboto', sans-serif;
   font-size: var(--font-size);
   font-weight: 300;
+  justify-content: center;
   height: 177.77vw;
   position: relative;
   width: 100%;
@@ -17,19 +25,33 @@
   cursor: none;
 }
 
+.top {
+  display: flex;
+  padding: var(--dimension-spacing);
+  width: 100%;
+}
+
+.middle {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  justify-content: center;
+  padding: var(--dimension-spacing);
+  width: 100%;
+}
+
+.bottom {
+  display: flex;
+  padding: var(--dimension-spacing);
+  width: 100%;
+}
+
 .loading, .unauthorised {
   font-size: 30vw;
-  left: 50%;
-  position: absolute;
-  top: 50%;
-  margin: -15vw 0 0 -15vw;
 }
 
 .marvin {
-  top: 50%;
   font-size: 50vw;
-  left: 50%;
   opacity: 0.3;
-  position: absolute;
-  transform: translate(-50%, -50%);
 }

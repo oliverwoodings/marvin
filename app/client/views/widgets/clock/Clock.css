@@ -4,9 +4,6 @@
   align-items: center;
   display: flex;
   flex-direction: column;
-  left: var(--dimension-spacing);
-  position: absolute;
-  top: var(--dimension-spacing);
 }
 
 .time {

@@ -42,10 +42,16 @@ class App extends Component {
 
     return (
       <div className={classes}>
-        <Clock />
-        <Weather />
-        <Transport />
-        {children || <Icon name='marvinHead' className={styles.marvin} />}
+        <div className={styles.top}>
+          <Clock />
+          <Weather />
+        </div>
+        <div className={styles.middle}>
+          {children || <Icon name='marvinHead' className={styles.marvin} />}
+        </div>
+        <div className={styles.bottom}>
+          <Transport />
+        </div>
       </div>
     )
   }

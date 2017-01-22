@@ -1,7 +1,6 @@
 module.exports = function showTubeStatus (io) {
   return (req, res) => {
-    const { line } = req.body
-    io.emit('SHOW_TUBE_STATUS', { line })
+    io.emit('SHOW_TUBE_STATUS')
     res.sendStatus(200)
   }
 }

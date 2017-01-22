@@ -7,5 +7,5 @@ export default createReducer(Immutable.Map(), {
 })
 
 function init (state, { transport }) {
-  return state.mergeDeep(transport)
+  return Immutable.fromJS(transport)
 }

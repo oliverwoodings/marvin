@@ -7,5 +7,5 @@ export default createReducer(Immutable.Map(), {
 })
 
 function init (state, { forecast }) {
-  return state.mergeDeep(forecast)
+  return Immutable.fromJS(forecast)
 }
