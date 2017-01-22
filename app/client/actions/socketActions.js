@@ -1,8 +1,8 @@
 import {
   RECEIVE_INIT,
   RECEIVE_SHOW_TUBE_STATUS,
-  RECEIVE_PLAY_NEWS,
-  RECEIVE_STOP_NEWS
+  RECEIVE_PLAY_MEDIA,
+  RECEIVE_STOP_MEDIA
 } from '../constants'
 import { reload, transitionTo } from './navigationActions'
 
@@ -24,10 +24,14 @@ export function receiveMessage ({ data }) {
         dispatch(transitionTo('tube-status'))
         setTimeout(() => dispatch(transitionTo('/')), 20000)
         break
-      case RECEIVE_PLAY_NEWS:
-        dispatch(transitionTo('news'))
+      case RECEIVE_PLAY_MEDIA:
+        if (payload.mediaType === 'news') {
+          dispatch(transitionTo('news'))
+        } else if (payload.mediaType.includes('radio')) {
+          dispatch(transitionTo('radio', { station: payload.mediaType }))
+        }
         break
-      case RECEIVE_STOP_NEWS:
+      case RECEIVE_STOP_MEDIA:
         dispatch(transitionTo('/'))
         break
     }

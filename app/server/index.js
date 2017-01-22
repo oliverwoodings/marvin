@@ -10,8 +10,8 @@ import log from './log'
 import socketLogger from './lib/socketLogger'
 import ttsHandler from './handlers/ttsHandler'
 import showTubeStatus from './handlers/showTubeStatus'
-import playNews from './handlers/playNews'
-import stopNews from './handlers/stopNews'
+import playMedia from './handlers/playMedia'
+import stopMedia from './handlers/stopMedia'
 import getEverything from './queries/getEverything'
 
 const app = express()
@@ -55,8 +55,8 @@ app.use('/api', (req, res, next) => {
 })
 app.get('/api/tts', ttsHandler)
 app.post('/api/show/tube-status', showTubeStatus(io))
-app.post('/api/play/news', playNews(io))
-app.post('/api/stop/news', stopNews(io))
+app.post('/api/play', playMedia(io))
+app.post('/api/stop', stopMedia(io))
 
 server.listen(config.port, () => {
   log.info(`Marvin started (http://localhost:${config.port})`)

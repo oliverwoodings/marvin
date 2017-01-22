@@ -4,7 +4,11 @@ import styles from './News.css'
 export default class News extends Component {
   render () {
     return (
-      <audio autoPlay src='http://video.news.sky.com/snr/news/snrnews.mp3' type='audio/mpeg' />
+      <iframe
+        className={styles.root}
+        src='https://www.youtube.com/embed/y60wDzZt8yg?rel=0&controls=0&showinfo=0&autoplay=1'
+        frameBorder='0'
+      />
     )
   }
 }

@@ -15,14 +15,17 @@ module.exports = {
       404: 'Marvin doesn\'t know what line that is'
     })
   },
-  PlayTheNews: function () {
-    request(this, 'play/news', {
-      200: 'OK, I\'ve asked marvin to put the news on for you'
+  Play: function () {
+    var mediaType = this.event.request.intent.slots.MediaType.value
+    request(this, 'play', { mediaType: mediaType }, {
+      200: 'OK, I\'ve asked marvin to put ' + mediaType + ' on for you',
+      404: 'Marvin doesn\'t know how to play ' + mediaType
     })
   },
-  StopTheNews: function () {
-    request(this, 'stop/news', {
-      200: 'OK, I\'ve asked marvin to turn the news off'
+  Stop: function () {
+    var mediaType = this.event.request.intent.slots.MediaType.value
+    request(this, 'stop', {
+      200: 'OK, I\'ve asked marvin to turn ' + mediaType + ' off'
     })
   }
 }
