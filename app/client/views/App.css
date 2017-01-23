@@ -17,6 +17,7 @@
   font-weight: 300;
   justify-content: center;
   height: 177.77vw;
+  overflow: hidden;
   position: relative;
   width: 100%;
 }

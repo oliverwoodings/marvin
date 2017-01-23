@@ -9,10 +9,11 @@ var defaultResponses = {
 }
 
 module.exports = {
-  ShowTubeStatus: function () {
-    request(this, 'show/tube-status', {
-      200: 'OK, I\'ve asked marvin to show you the status of the tube lines',
-      404: 'Marvin doesn\'t know what line that is'
+  ShowTransportStatus: function () {
+    var transport = this.event.request.intent.slots.Transport.value
+    request(this, 'show/transport-status', { transport: transport }, {
+      200: 'OK, I\'ve asked marvin to show you the status of the ' + transport,
+      404: 'Marvin doesn\'t know the status of the ' + transport
     })
   },
   Play: function () {

@@ -9,7 +9,7 @@ import hotLoad from './lib/hotLoad'
 import log from './log'
 import socketLogger from './lib/socketLogger'
 import ttsHandler from './handlers/ttsHandler'
-import showTubeStatus from './handlers/showTubeStatus'
+import showTransportStatus from './handlers/showTransportStatus'
 import playMedia from './handlers/playMedia'
 import stopMedia from './handlers/stopMedia'
 import streamAudio from './handlers/streamAudio'
@@ -56,7 +56,7 @@ app.use('/api', (req, res, next) => {
   }
 })
 app.get('/api/tts', ttsHandler)
-app.post('/api/show/tube-status', showTubeStatus(io))
+app.post('/api/show/transport-status', showTransportStatus(io))
 app.post('/api/play', playMedia(io))
 app.post('/api/stop', stopMedia(io))
 app.get('/api/stream', streamAudio)

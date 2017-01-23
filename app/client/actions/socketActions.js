@@ -1,6 +1,6 @@
 import {
   RECEIVE_INIT,
-  RECEIVE_SHOW_TUBE_STATUS,
+  RECEIVE_SHOW_TRANSPORT_STATUS,
   RECEIVE_PLAY_MEDIA,
   RECEIVE_STOP_MEDIA
 } from '../constants'
@@ -20,8 +20,8 @@ export function receiveMessage ({ data }) {
           dispatch(reload())
         }
         break
-      case RECEIVE_SHOW_TUBE_STATUS:
-        dispatch(transitionTo('tube-status'))
+      case RECEIVE_SHOW_TRANSPORT_STATUS:
+        dispatch(transitionTo(`${payload.transport}-status`))
         setTimeout(() => dispatch(transitionTo('/')), 20000)
         break
       case RECEIVE_PLAY_MEDIA:

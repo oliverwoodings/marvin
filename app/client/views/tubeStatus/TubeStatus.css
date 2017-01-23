@@ -5,6 +5,10 @@
   justify-content: center;
 }
 
+.noDisruptions {
+  text-align: center;
+}
+
 .disruption {
   align-items: center;
   display: flex;

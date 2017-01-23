@@ -1,4 +1,5 @@
 import config from 'config'
+import _ from 'lodash'
 import { get } from 'axios'
 import log from '../log'
 import { getBusDisruptionUrl } from '../urls'
@@ -13,9 +14,9 @@ export default async function getBusStatus () {
       return (await get(url)).data
     }))
 
-    const delays = busStatuses.filter((busStatus) => {
+    const delays = _.flatten(busStatuses.filter((busStatus) => {
       return busStatus.length > 0
-    })
+    }))
 
     return {
       disrupted: delays.length > 0,

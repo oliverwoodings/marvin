@@ -1,0 +1,19 @@
+.root {
+  display: flex;
+  flex-align: center;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.noDisruptions {
+  text-align: center;
+}
+
+.disruption {
+  font-size: 5vw;
+  text-align: center;
+}
+
+.disruption + .disruption {
+  margin-top: 4vw;
+}

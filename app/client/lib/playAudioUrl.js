@@ -27,7 +27,7 @@ export default function playAudioUrl (url, onUpdate) {
 
   function fetchAudioData () {
     if (playing) {
-      setTimeout(() => requestAnimationFrame(fetchAudioData), 200)
+      setTimeout(() => requestAnimationFrame(fetchAudioData), 400)
       analyser.getByteTimeDomainData(data)
       onUpdate(data)
     }

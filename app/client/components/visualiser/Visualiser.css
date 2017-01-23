@@ -8,7 +8,7 @@
   background: white;
   position: absolute;
   width: 1vw;
-  transition: height 0.2s linear;
+  transition: height 0.4s linear;
 }
 
 .circle {
