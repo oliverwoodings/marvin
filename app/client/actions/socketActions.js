@@ -27,7 +27,7 @@ export function receiveMessage ({ data }) {
       case RECEIVE_PLAY_MEDIA:
         if (payload.type === 'news') {
           dispatch(transitionTo('news'))
-        } else if (payload.mediaType === 'radio') {
+        } else if (payload.type === 'radio') {
           dispatch(transitionTo('radio', { station: payload.station }))
         }
         break
