@@ -6,6 +6,7 @@ import Icon from '../components/icon/Icon'
 import Weather from './widgets/weather/Weather'
 import Clock from './widgets/clock/Clock'
 import Transport from './widgets/transport/Transport'
+import CalendarSummary from './widgets/calendarSummary/CalendarSummary'
 import styles from './App.css'
 
 function mapStateToProps ({ init }) {
@@ -51,6 +52,7 @@ class App extends Component {
         </div>
         <div className={styles.bottom}>
           <Transport />
+          <CalendarSummary />
         </div>
       </div>
     )

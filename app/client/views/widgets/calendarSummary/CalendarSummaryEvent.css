@@ -1,0 +1,18 @@
+.root {
+  align-items: center;
+  display: flex;
+  font-size: 3vw;
+}
+
+.root + .root {
+  margin-top: 3vw;
+}
+
+.icon {
+  font-size: 5vw;
+  margin-right: 2vw;
+}
+
+.title {
+  font-style: italic;
+}
