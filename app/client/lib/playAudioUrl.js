@@ -1,6 +1,6 @@
 import getAuthKey from './getAuthKey'
 
-const FFT_SIZE = 128
+const FFT_SIZE = 64
 
 export default function playAudioUrl (url, onUpdate) {
   let playing = true
@@ -27,7 +27,7 @@ export default function playAudioUrl (url, onUpdate) {
 
   function fetchAudioData () {
     if (playing) {
-      setTimeout(() => requestAnimationFrame(fetchAudioData), 50)
+      setTimeout(() => requestAnimationFrame(fetchAudioData), 200)
       analyser.getByteTimeDomainData(data)
       onUpdate(data)
     }
