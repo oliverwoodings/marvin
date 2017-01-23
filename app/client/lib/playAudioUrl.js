@@ -36,5 +36,7 @@ export default function playAudioUrl (url, onUpdate) {
   return function stop () {
     playing = false
     audio.pause()
+    const blob = new Blob([], { type: 'audio/mp3' })
+    audio.src = URL.createObjectURL(blob)
   }
 }
