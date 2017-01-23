@@ -12,6 +12,7 @@ import ttsHandler from './handlers/ttsHandler'
 import showTubeStatus from './handlers/showTubeStatus'
 import playMedia from './handlers/playMedia'
 import stopMedia from './handlers/stopMedia'
+import streamAudio from './handlers/streamAudio'
 import getEverything from './queries/getEverything'
 
 const app = express()
@@ -23,7 +24,7 @@ io.use(socketLogger)
 io.on('connection', async (socket) => {
   const { query, address } = socket.handshake
 
-  if (query.key === config.auth.key || config.localhost.indexOf(address) >= 0) {
+  if (query.key === config.auth.key || config.localhost.includes(address)) {
     socket.emit('AUTHORISED')
     socket.emit('INIT', await getEverything())
   } else {
@@ -47,7 +48,8 @@ app.use(bodyParser.json())
 app.use('/', express.static(dist))
 
 app.use('/api', (req, res, next) => {
-  if (req.query.key !== config.auth.key) {
+  const address = req.connection.remoteAddress
+  if (req.query.key !== config.auth.key && !config.localhost.includes(address)) {
     res.sendStatus(401)
   } else {
     next()
@@ -57,6 +59,7 @@ app.get('/api/tts', ttsHandler)
 app.post('/api/show/tube-status', showTubeStatus(io))
 app.post('/api/play', playMedia(io))
 app.post('/api/stop', stopMedia(io))
+app.get('/api/stream', streamAudio)
 
 server.listen(config.port, () => {
   log.info(`Marvin started (http://localhost:${config.port})`)

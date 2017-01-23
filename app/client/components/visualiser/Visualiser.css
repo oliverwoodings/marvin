@@ -1,0 +1,31 @@
+.root {
+  height: 100vw;
+  position: relative;
+  width: 100vw;
+}
+
+.bar {
+  background: white;
+  position: absolute;
+  width: 0.5vw;
+  transition: height 0.1s linear;
+}
+
+.circle {
+  align-items: center;
+  background: white;
+  border-radius: 25vw;
+  display: flex;
+  height: 25vw;
+  justify-content: center;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 25vw;
+  z-index: 10;
+}
+
+.logo {
+  width: 70%;
+}
