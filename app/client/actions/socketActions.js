@@ -28,10 +28,10 @@ export function receiveMessage ({ data }) {
         dispatch(transitionTo('/'))
         // Defer so we have a chance to kill the current audio stream
         setTimeout(() => {
-          if (payload.mediaType === 'news') {
+          if (payload.type === 'news') {
             dispatch(transitionTo('news'))
-          } else if (payload.mediaType.includes('radio')) {
-            dispatch(transitionTo('radio', { station: payload.mediaType }))
+          } else if (payload.mediaType === 'radio') {
+            dispatch(transitionTo('radio', { station: payload.station }))
           }
         }, 100)
         break
