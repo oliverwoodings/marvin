@@ -3,21 +3,21 @@ BIN = ./node_modules/.bin
 .PHONY: start lint test deploy bootstrap
 
 start:
-	@NODE_ENV=development $(BIN)/nodemon .
+	NODE_ENV=development $(BIN)/nodemon .
 
 lint:
-	@$(BIN)/standard
+	$(BIN)/standard
 
 test: lint
 
 build:
-	@NODE_ENV=production $(BIN)/webpack -p --progress
+	NODE_ENV=production $(BIN)/webpack -p --progress
 
 deploy:
-	@$(BIN)/pm2 deploy production
+	$(BIN)/pm2 deploy production
 
 bootstrap:
-	@npm install
+	yarn
 
 bundle-skills:
 	(cd ./app/skills && zip -r ../../skills.zip ./*)

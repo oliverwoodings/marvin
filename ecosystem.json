@@ -13,7 +13,7 @@
       "ref": "origin/master",
       "repo": "git@github.com:oliverwoodings/marvin.git",
       "path": "~/apps/marvin",
-      "post-deploy" : "make bootstrap build && pm2 startOrRestart ecosystem.json --env production"
+      "post-deploy" : "nvm install && make bootstrap build && pm2 startOrRestart ecosystem.json --env production"
     }
   }
 }
