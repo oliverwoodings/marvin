@@ -1,5 +1,4 @@
-@import 'variables';
-
 .root {
   align-self: flex-end;
+  margin: 0 1vw 0 auto;
 }

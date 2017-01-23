@@ -9,6 +9,11 @@ localhost:
 auth:
   key: foo
 
+calendars:
+  - { id: oliver.woodings@gmail.com, name: oli }
+  - { id: k9ajcj33fitet98ifjm6n56hgk@group.calendar.google.com, name: music }
+  - { id: oliver.woodings@qubit.com, name: qubit }
+
 apis:
   weather:
     key: apikey

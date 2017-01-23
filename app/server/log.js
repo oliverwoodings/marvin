@@ -1,12 +1,4 @@
-var winston = require('winston')
+const createLogger = require('driftwood')
 
-var transports = [new (winston.transports.Console)({
-  level: 'debug',
-  colorize: true,
-  timestamp: true,
-  prettyPrint: true
-})]
-
-module.exports = new winston.Logger({
-  transports: process.env.NODE_ENV === 'test' ? [] : transports
-})
+createLogger.enable({ '*': 'trace' })
+module.exports = createLogger('marvin')
