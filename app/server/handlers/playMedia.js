@@ -4,7 +4,7 @@ const stations = {
   'radio-3': /radio (three|3|tree)/,
   'radio-4': /radio (four|4|for|thor)/,
   'absolute-radio': /absolute? radio/,
-  'jazz-fm': /jazz fm/
+  'jazz-fm': /jazz/
 }
 
 module.exports = function playNews (io) {
