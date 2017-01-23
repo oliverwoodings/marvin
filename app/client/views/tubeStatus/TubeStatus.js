@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import _ from 'lodash'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
-import ReturnToRoot from '../../components/returnToRoot/returnToRoot'
+import ReturnToRoot from '../../components/returnToRoot/ReturnToRoot'
 import Icon from '../../components/icon/Icon'
 import styles from './TubeStatus.css'
 

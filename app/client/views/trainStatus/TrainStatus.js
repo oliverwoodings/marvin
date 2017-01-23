@@ -3,7 +3,7 @@ import _ from 'lodash'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
 import Icon from '../../components/icon/Icon'
-import ReturnToRoot from '../../components/returnToRoot/returnToRoot'
+import ReturnToRoot from '../../components/returnToRoot/ReturnToRoot'
 import styles from './TrainStatus.css'
 
 function mapStateToProps ({ transport }) {
