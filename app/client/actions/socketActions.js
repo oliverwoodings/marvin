@@ -22,7 +22,6 @@ export function receiveMessage ({ data }) {
         break
       case RECEIVE_SHOW_TRANSPORT_STATUS:
         dispatch(transitionTo(`${payload.transport}-status`))
-        setTimeout(() => dispatch(transitionTo('/')), 20000)
         break
       case RECEIVE_PLAY_MEDIA:
         if (payload.type === 'news') {

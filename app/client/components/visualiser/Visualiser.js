@@ -16,7 +16,7 @@ const Visualiser = ({ data, logo }) => {
     const rotation = i * change
     const left = (center + radius * Math.cos(rotation)) + 'vw'
     const top = (center + radius * Math.sin(rotation)) + 'vw'
-    const height = ((data[i] / maxDataValue) * 50) + 'vw' // 50 controls height ratio of bars
+    const height = ((data[i] / maxDataValue) * 47) + 'vw' // 50 controls height ratio of bars
     const transform = `rotate(${(rotation - (Math.PI / 2))}rad)`
     const transformOrigin = '0px 0px'
 

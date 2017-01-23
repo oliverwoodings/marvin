@@ -1,15 +1,15 @@
 .root {
   align-items: center;
   display: flex;
-  font-size: 3vw;
+  font-size: 2.5vw;
 }
 
 .root + .root {
-  margin-top: 3vw;
+  margin-top: 2.5vw;
 }
 
 .icon {
-  font-size: 5vw;
+  font-size: 4.5vw;
   margin-right: 2vw;
 }
 

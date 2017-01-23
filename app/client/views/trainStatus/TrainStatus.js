@@ -3,6 +3,7 @@ import _ from 'lodash'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
 import Icon from '../../components/icon/Icon'
+import ReturnToRoot from '../../components/returnToRoot/returnToRoot'
 import styles from './TrainStatus.css'
 
 function mapStateToProps ({ transport }) {
@@ -19,6 +20,7 @@ class TrainStatus extends Component {
     if (!disrupted) {
       return (
         <div className={classnames(styles.root, styles.noDisruptions)}>
+          <ReturnToRoot />
           There are no disruptions to the trains :)
         </div>
       )
@@ -26,6 +28,7 @@ class TrainStatus extends Component {
 
     return (
       <div className={styles.root}>
+        <ReturnToRoot />
         {disruptions.map(::this.renderDisruption)}
       </div>
     )

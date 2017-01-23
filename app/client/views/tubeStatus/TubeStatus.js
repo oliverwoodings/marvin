@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import _ from 'lodash'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
+import ReturnToRoot from '../../components/returnToRoot/returnToRoot'
 import Icon from '../../components/icon/Icon'
 import styles from './TubeStatus.css'
 
@@ -25,6 +26,7 @@ class TubeStatus extends Component {
     if (!disrupted) {
       return (
         <div className={classnames(styles.root, styles.noDisruptions)}>
+          <ReturnToRoot />
           There are no disruptions on the tube :)
         </div>
       )
@@ -32,6 +34,7 @@ class TubeStatus extends Component {
 
     return (
       <div className={styles.root}>
+        <ReturnToRoot />
         {disruptions.map(::this.renderDisruption)}
       </div>
     )
