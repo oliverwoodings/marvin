@@ -10,7 +10,7 @@ module.exports = function showTransportStatus (io) {
   }
 }
 
-function normaliseTransport (transport) {
+function normaliseTransport (transport = '') {
   if (/(train|overground|rail)/.test(transport)) return 'train'
   if (transport.includes('bus')) return 'bus'
   if (/(tube|bus|under ?ground)/.test(transport)) return 'tube'
