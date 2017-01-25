@@ -15,6 +15,7 @@ import playMedia from './handlers/playMedia'
 import stopMedia from './handlers/stopMedia'
 import streamAudio from './handlers/streamAudio'
 import getCalendar from './handlers/getCalendar'
+import reload from './handlers/reload'
 import getEverything from './queries/getEverything'
 
 const app = express()
@@ -63,6 +64,7 @@ app.get('/api/tts', ttsHandler)
 app.post('/api/show/transport-status', showTransportStatus(io))
 app.post('/api/play', playMedia(io))
 app.post('/api/stop', stopMedia(io))
+app.post('/api/reload', reload(io))
 app.get('/api/stream', streamAudio)
 app.get('/api/calendar', getCalendar)
 

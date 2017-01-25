@@ -2,7 +2,8 @@ import {
   RECEIVE_INIT,
   RECEIVE_SHOW_TRANSPORT_STATUS,
   RECEIVE_PLAY_MEDIA,
-  RECEIVE_STOP_MEDIA
+  RECEIVE_STOP_MEDIA,
+  RECEIVE_RELOAD
 } from '../constants'
 import { reload, transitionTo } from './navigationActions'
 
@@ -32,6 +33,9 @@ export function receiveMessage ({ data }) {
         break
       case RECEIVE_STOP_MEDIA:
         dispatch(transitionTo('/'))
+        break
+      case RECEIVE_RELOAD:
+        dispatch(reload())
         break
     }
 

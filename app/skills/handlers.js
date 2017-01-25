@@ -29,6 +29,11 @@ module.exports = {
     request(this, 'stop', {
       200: 'OK, I\'ve asked marvin to ' + action
     })
+  },
+  Reload: function () {
+    request(this, 'reload', {
+      200: 'OK, I\'ve asked marvin to reload himself'
+    })
   }
 }
 
