@@ -39,7 +39,6 @@ export function receiveMessage ({ data }) {
         break
     }
 
-
     dispatch({ type, payload })
   }
 }

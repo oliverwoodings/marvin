@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Immutable from 'immutable'
 import _ from 'lodash'
 import classnames from 'classnames'
 import { connect } from 'react-redux'
@@ -15,8 +16,10 @@ function mapStateToProps ({ transport }) {
 
 const closureIcons = {
   serviceClosed: 'denied',
+  suspended: 'warning',
+  partSuspended: 'warning',
   minorDelays: 'warning',
-  majorDelays: 'warning'
+  severeDelays: 'warning'
 }
 
 class TubeStatus extends Component {
@@ -40,11 +43,11 @@ class TubeStatus extends Component {
     )
   }
 
-  renderDisruption (disruption) {
+  renderDisruption (disruption, index) {
     const [, line, details] = disruption.get('description').match(/^(.+?) Line: (.+)$/)
 
     return (
-      <div className={styles.disruption} key={line}>
+      <div className={styles.disruption} key={`${line}-${index}`}>
         <div className={classnames(styles.line, styles[_.camelCase(line)])}>
           <Icon
             name={closureIcons[disruption.get('closureText')]} 
