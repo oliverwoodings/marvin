@@ -14,6 +14,7 @@ calendars:
   - { id: daniellehutchings48@gmail.com, name: danni }
   - { id: k9ajcj33fitet98ifjm6n56hgk@group.calendar.google.com, name: music }
   - { id: oliver.woodings@qubit.com, name: qubit }
+  - { id: nol0ng93cgknfqkvckehlo5pek@group.calendar.google.com, name: refuse }
 
 apis:
   weather:
@@ -21,16 +22,13 @@ apis:
     cityId: 2643743
   tfl:
     buses:
-      - 93
-      - 57
-      - 131
-      - 219
+      - 406
+      - 418
+      - 201
   huxley:
     key: apikey
     routes:
-      - { from: wim, to: wat }
-      - { from: wat, to: wim }
-      - { from: wim, to: kng }
-      - { from: kng, to: wim }
+      - { from: sur, to: wat }
+      - { from: wat, to: sur }
   wit:
     key: apikey

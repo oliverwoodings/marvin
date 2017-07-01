@@ -7,7 +7,8 @@ const calendarIcons = {
   'oli': 'male',
   'danni': 'female',
   'qubit': 'briefcase',
-  'music': 'music'
+  'music': 'music',
+  'refuse': 'bin'
 }
 
 const CalendarSummaryEvent = ({ event }) => {
