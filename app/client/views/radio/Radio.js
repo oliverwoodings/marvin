@@ -27,7 +27,7 @@ const stations = {
     logo: '/images/logo-absolute-radio.png'
   },
   'jazz-fm': {
-    url: 'http://adsi-e-02-boh.sharp-stream.com:8000/jazzfmmobile.mp3',
+    url: 'http://adsi-e-02-boh.sharp-stream.com/jazzfmmobile.mp3',
     logo: '/images/logo-jazz-fm.png'
   }
 }
