@@ -14,7 +14,6 @@ calendars:
   - { id: daniellehutchings48@gmail.com, name: danni }
   - { id: k9ajcj33fitet98ifjm6n56hgk@group.calendar.google.com, name: music }
   - { id: oliver.woodings@qubit.com, name: qubit }
-  - { id: nol0ng93cgknfqkvckehlo5pek@group.calendar.google.com, name: refuse }
 
 apis:
   weather:
